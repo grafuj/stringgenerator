@@ -1,4 +1,6 @@
-//returns a random string of desired length, using booleans to determine what the password should contain
+// returns a random string of any desired length, using booleans to determine what the password should contain
+// this function is designed to work in a page with tick boxes whose value can be read and placed in the function call
+
 const generateRandomString = (length = 13, containLowercase = true, containUppercase = false, containNumbers = true, containSymbols = false) => {
   let bank = "";
   if (containLowercase) {
@@ -21,7 +23,7 @@ const generateRandomString = (length = 13, containLowercase = true, containUpper
     console.log('no ticks selected')
     return randStr;
   }
-  
+
   for (let i = 0; i < length; i++) {
     randStr += bank[Math.floor(bank.length * Math.random())];
   }
